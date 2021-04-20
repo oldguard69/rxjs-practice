@@ -1,0 +1,21 @@
+#wrapper {
+    display: grid;
+    grid-template-areas: "topnav topnav topnav"
+                         "sidenav main side_ad";
+    grid-template-rows: max-content auto;
+    grid-template-columns: 300px 950px auto; // 1032px is hardcode
+}
+
+.mat-sidenav {
+    width: 300px;
+    position: fixed;
+}
+
+#sidenav {
+    grid-area: sidenav;
+}
+
+#main {
+    grid-area: main;
+    min-height: calc(100vh - 62px);
+}
