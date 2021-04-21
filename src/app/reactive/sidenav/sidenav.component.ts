@@ -11,7 +11,8 @@ interface page {
 })
 export class SidenavComponent implements OnInit {
   pages: page[] = [
-    {name: 'Stop Watch', link: 'stopwatch'}
+    { name: 'Stop Watch', link: 'stopwatch' },
+    { name: 'Drag and Drop', link: 'draganddrop' }
   ]
 
   constructor() { }

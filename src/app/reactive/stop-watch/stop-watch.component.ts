@@ -1,13 +1,13 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { interval, fromEvent, from, Observable } from "rxjs";
-import { map, switchMap, takeUntil } from "rxjs/operators";
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { interval, fromEvent, Observable } from "rxjs";
+import { map, takeUntil } from "rxjs/operators";
 
 @Component({
   selector: 'app-stop-watch',
   templateUrl: './stop-watch.component.html',
   styleUrls: ['./stop-watch.component.scss']
 })
-export class StopWatchComponent implements OnInit {
+export class StopWatchComponent implements AfterViewInit {
   @ViewChild('startbutton') startButton: ElementRef;
   @ViewChild('stopbutton') stopButton: ElementRef;
   @ViewChild('output') resultArea: ElementRef;
@@ -31,9 +31,4 @@ export class StopWatchComponent implements OnInit {
         .subscribe(num => this.resultArea.nativeElement.innerText = num + 's');
     });
   }
-
-  ngOnInit(): void {
-    
-  }
-
 }
